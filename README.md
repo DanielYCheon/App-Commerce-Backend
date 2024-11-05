@@ -95,6 +95,12 @@ To get a local copy up and running, follow these steps:
    ```
 <br/>
 
+<div align="right">
+   
+   [Go To Top](#idtext)
+   
+</div>
+
 ## :rocket: Usage
 
 > [!NOTE]
@@ -241,6 +247,12 @@ spring.jwt.secret=your_secret_key
 For more details, refer to the `pom.xml` file.
 <br/><br/>
 
+<div align="right">
+   
+   [Go To Top](#idtext)
+   
+</div>
+
 ## :link: References
 
    - [Spring Security Documentation](https://docs.spring.io/spring-security/reference/getting-spring-security.html) – The resources for understanding Spring Security, including authentication and authorization.
@@ -261,7 +273,13 @@ For more details, refer to the `pom.xml` file.
 
 ## :pencil: License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the ```LICENSE.txt``` file for details.
+
+<div align="right">
+   
+   [Go To Top](#idtext)
+   
+</div>
 
 
      
