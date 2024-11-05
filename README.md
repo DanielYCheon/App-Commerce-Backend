@@ -1,4 +1,6 @@
+
 # Online Commerce Application - Backend
+<a id="idtext"></a> 
 
 <div align="center">
 <br>
@@ -245,11 +247,16 @@ For more details, refer to the `pom.xml` file.
    - [JWT Introduction](https://jwt.io/introduction) – Understanding JWT tokens and how they are processed in user authentication.
    - [Auth0 Community – JWT](https://community.auth0.com/c/jwt/8) – Community-driven solutions and discussions for resolving JWT-related issues.
    - [Spring Security – OAuth2 Resource Server with JWT](https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html) – Guide on configuring Spring Security as an OAuth2 resource server with JWT support.
+
+
 <br/><br/>
+
+[Go To Top](#idtext)
+
 
 ## :pencil: License
 
-
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 
      
