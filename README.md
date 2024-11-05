@@ -8,7 +8,21 @@ A Spring Boot-based shopping application with JWT authentication, user managemen
 <br/><br/>
 </div>
 
-### Introduction
+
+## :clipboard: Table of Contents
+1. [Introduction](#Introduction)  
+2. [Key Features](#Key-Features)
+3. [Built With](#Built-With)
+4. [Getting Started](#Getting-Started)
+   - [Prerequisites](#Prerequisites)
+   - [Installation](#Installation)
+5. [Usage](#Usage)
+   - [Security](#Security)
+   - [Dependencies](#Dependencies)
+6. [References](#References)
+8. [License](#License)
+
+## Introduction
 
 The Shopping Project is a Spring Boot web application designed to provide a user-friendly online shopping experience. It features secure user authentication with JWT and Spring Security, enabling reliable access control and user management. 
 Users can register, log in and manage their passwords. An administrative interface allows administrators to add products and manage product details efficiently.
