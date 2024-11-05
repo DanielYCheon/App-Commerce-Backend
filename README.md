@@ -68,7 +68,7 @@ Key functionalities include a shopping cart where users can add products, adjust
   - API Testing: POSTMAN
 <br/>
 
-## Getting Started
+## :globe_with_meridians: Getting Started
 To get a local copy up and running, follow these steps:
 
 #### Prerequisites
