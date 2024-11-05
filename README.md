@@ -5,11 +5,14 @@
 <div align="center">
 <br>
 A Spring Boot-based shopping application with JWT authentication, user management, and shopping cart functionality.
-<br/><br/>
-</div>
 
+</div>
+<br/><br/>
 
 ## :clipboard: Table of Contents
+
+
+
 1. [Introduction](#Introduction)  
 2. [Key Features](#Key-Features)
 3. [Built With](#Built-With)
@@ -21,6 +24,8 @@ A Spring Boot-based shopping application with JWT authentication, user managemen
    - [Dependencies](#Dependencies)
 6. [References](#References)
 8. [License](#License)
+
+<br/>
 
 ## Introduction
 
