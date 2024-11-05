@@ -69,8 +69,190 @@ To get a local copy up and running, follow these steps:
     cd app-commerce-system
  ```
 3. Set up the Database
+   
    a. Ensure MySQL is installed and running.
+   
    b. Create a Database named shoppingproject
+   
+   c. Upload the database configuration in **_src/main/resources/appliaction.properties_**
 
+      ```ini
+      spring.application.name=shoppingProject
+      spring.jpa.hibernate.ddl-auto=update
+      spring.datasource.url=jdbc:mysql://localhost:3306/shoppingproject
+      spring.datasource.username=root
+      spring.datasource.password=yourpassword
+      ```
+4. Build the project
+   ```sh
+   mvn clean install
+   ```
+5. Run Application
+   ```sh
+   mvn spring-boot:run
+   ```
+<br/>
+
+## :rocket: Usage
+
+> [!NOTE]
+> The application will start on "http://localhost:8080" 
+
+
+
+### API Endpoints
+
+   - **Register User**
+     
+```http
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+"username": "user1",
+"email": "user1@example.com",
+"password": "password"
+}
+
+```
+<br/>
+
+   - **Authenticate User (Login)**
+
+```http
+POST http://localhost:8080/api/auth/authenticate
+Content-Type: application/json
+
+{
+"username": "user1",
+"password": "password"
+}
+ ```
+<br/>
+
+   - **Refresh Token**
+
+```http
+POST http://localhost:8080/api/auth/refresh
+Content-Type: application/json
+
+{
+"refreshToken": "your_refresh_token"
+}
+```
+<br/>
+
+- **Check Token**
+
+```http
+GET http://localhost:8080/api/auth/checkToken
+Content-Type: application/json
+
+{
+"Access Token": "your_access_token"
+}
+```
+<br/>
+
+- **Change Password**
+  
+```http
+POST http://localhost:8080/api/auth/change-password
+Content-Type: application/json
+
+{
+"username": "user1",
+"oldPassword": "old_password",
+"newPassword": "new_password"
+}
+```
+<br/>
+
+ - **Add to Cart**
+```http
+POST http://localhost:8080/api/auth/add
+Content-Type: application/json
+{
+"username": "USER NAME",
+"productName": "PRODUCT NAME",
+"quantity": 1
+}
+```
+<br/>
+
+ - **Upload Image**
+ 
+```http
+POST http://localhost:8080/api/auth/imageupload
+Content-Type: multipart/form-data
+{
+"image": "file",
+"productName": "product1",
+"productDescription": "description",
+"productPrice": "price",
+"gender": "gender"
+}
+```
+<br/>
+
+- **Download Image:**
+
+```http
+GET http://localhost:8080/api/auth/image/{imageName}
+```
+<br/>
+
+- **Download Image Details:**
+  
+```http
+GET http://localhost:8080/api/auth/image/detail/{imageName}
+```
+<br/>
+
+- **Get Products by Gender:**
+  
+```http
+GET http://localhost:8080/api/auth/get/products/{gender}
+```
+<br/>
+
+### Security
+
+- The application uses JWT for authentication.
+- Update the JWT secret in `src/main/resources/application.properties`
+
+```ini
+spring.jwt.secret=your_secret_key
+```
+<br/>
+
+### Dependencies
+
+- Spring Boot Starter Data JPA
+- Spring Boot Starter JDBC
+- Spring Boot Starter Security
+- Spring Boot Starter Web
+- MySQL Connector
+- Lombok
+- JJWT
+
+For more details, refer to the `pom.xml` file.
+<br/><br/>
+
+## :link: References
+
+   - [Spring Security Documentation](https://docs.spring.io/spring-security/reference/getting-spring-security.html) – The resources for understanding Spring Security, including authentication and authorization.
+   - [JWT Introduction](https://jwt.io/introduction) – Understanding JWT tokens and how they are processed in user authentication.
+   - [Auth0 Community – JWT](https://community.auth0.com/c/jwt/8) – Community-driven solutions and discussions for resolving JWT-related issues.
+   - [Spring Security – OAuth2 Resource Server with JWT](https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html) – Guide on configuring Spring Security as an OAuth2 resource server with JWT support.
+<br/><br/>
+
+## :pencil: License
+
+
+
+
+     
+ 
 
 
