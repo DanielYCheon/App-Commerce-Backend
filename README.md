@@ -4,7 +4,7 @@
 
 <div align="center">
 <br>
-A Spring Boot-based shopping application with JWT authentication, user management, and shopping cart functionality.
+A Spring Boot-based shopping application with JWT authentication, using a relational database for user management and shopping cart functionality.
 
 </div>
 <br/><br/>
@@ -15,18 +15,20 @@ A Spring Boot-based shopping application with JWT authentication, user managemen
 
 1. [Introduction](#Introduction)  
 2. [Key Features](#Key-Features)
-3. [Built With](#Built-With)
-4. [Getting Started](#Getting-Started)
+3. [Database Design](#Database-Design)
+4. [Built With](#Built-With)
+5. [Getting Started](#Getting-Started)
    - [Prerequisites](#Prerequisites)
    - [Installation](#Installation)
-5. [Usage](#Usage)
+6. [Usage](#Usage)
    - [Security](#Security)
    - [Dependencies](#Dependencies)
-6. [References](#References)
+7. [References](#References)
 8. [License](#License)
 
 <br/>
 
+<a id="Introduction"></a>
 ## Introduction
 
 The Shopping Project is a Spring Boot web application designed to provide a user-friendly online shopping experience. It features secure user authentication with JWT and Spring Security, enabling reliable access control and user management. 
@@ -34,6 +36,8 @@ Users can register, log in and manage their passwords. An administrative interfa
 Key functionalities include a shopping cart where users can add products, adjust quantities, and prepare items for checkout. The application also includes product image zoom feature, enhancing the browsing experience with detailed product visuals.
 <br/><br/>
 
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="Key-Features"></a>
 ## :star: Key Features
 
 1. **User Authentication**
@@ -56,7 +60,53 @@ Key functionalities include a shopping cart where users can add products, adjust
 6. **RESTful API**
    - Provides endpoints for user authentication, cart management, and image handling.
   <br/>
-  
+
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="Database-Design"></a>
+## :file_cabinet: Database Design
+
+Contents include using database business logic to create a relational database.
+
+### 1. Database Schema
+
+#### Entity : User
+| Attributes  | Key |
+| ------------- | ------------- |
+| <ins>*id </ins>  | PK (Primary Key)  |
+| username   |   |
+| email   |   |
+| password   |   |
+| role   |   |
+
+
+#### Entity : AddCart
+| Attributes  | Key |
+| ------------- | ------------- |
+| <ins>*id </ins>  | PK (Primary Key)  |
+| user_id   | FK (Foreign Key)  |
+
+#### Entity : CartItem
+| Attributes  | Key |
+| ------------- | ------------- |
+| <ins>*id </ins>  | PK (Primary Key)  |
+| addCart_id   | FK (Foreign Key)  |
+| image_id   | FK (Foreign Key)  |
+| quantity  |  |
+
+#### Entity : Image (Product)
+| Attributes  | Key |
+| ------------- | ------------- |
+| <ins>*id </ins>  | PK (Primary Key)  |
+| name  |  |
+| type   |   |
+| productName |  |
+|productDescription|  |
+|productPrice| |
+|gender | |
+| imageData | |
+
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="Built-With"></a>
 ## :wrench: Built With
   - Base : JAVA
   - Frameworks : Spring Boot
@@ -68,6 +118,8 @@ Key functionalities include a shopping cart where users can add products, adjust
   - API Testing: POSTMAN
 <br/>
 
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="Getting-Started"></a>
 ## :globe_with_meridians: Getting Started
 To get a local copy up and running, follow these steps:
 
@@ -94,6 +146,9 @@ To get a local copy up and running, follow these steps:
    a. Ensure MySQL is installed and running.
    
    b. Create a Database named shoppingproject
+   ```sql
+   CREATE DATABASE shoppingproject;
+   ```
    
    c. Upload the database configuration in **_src/main/resources/appliaction.properties_**
 
@@ -104,11 +159,11 @@ To get a local copy up and running, follow these steps:
       spring.datasource.username=root
       spring.datasource.password=yourpassword
       ```
-4. Build the project
+5. Build the project
    ```sh
    mvn clean install
    ```
-5. Run Application
+6. Run Application
    ```sh
    mvn spring-boot:run
    ```
@@ -120,6 +175,8 @@ To get a local copy up and running, follow these steps:
    
 </div>
 
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="Usage"></a>
 ## :rocket: Usage
 
 > [!NOTE]
@@ -272,6 +329,8 @@ For more details, refer to the `pom.xml` file.
    
 </div>
 
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="References"></a>
 ## :link: References
 
    - [Spring Security Documentation](https://docs.spring.io/spring-security/reference/getting-spring-security.html) – The resources for understanding Spring Security, including authentication and authorization.
@@ -289,7 +348,8 @@ For more details, refer to the `pom.xml` file.
 </div>
 
 
-
+<!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
+<a id="License"></a>
 ## :pencil: License
 
 This project is licensed under the MIT License - see the ```LICENSE.txt``` file for details.
