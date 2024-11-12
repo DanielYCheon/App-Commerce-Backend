@@ -67,7 +67,31 @@ Key functionalities include a shopping cart where users can add products, adjust
 
 Contents include using database business logic to create a relational database.
 
-### 1. Database Schema
+### 1. ERD (Entity Relationship Diagram)
+
+<img src="https://github.com/user-attachments/assets/7a3d4cda-b68e-4081-bce8-e6bd2e8a49b9"/>
+
+### 2. Business Logic 
+
+#### (a) ```user``` &harr; ```add_cart``` ( one-to-one )
+- Each ```user``` can have one active ```add_cart``` when registered.
+- Each ```add_cart``` is associated with exactly one user, which is that only the owner can view and modify that cart.
+
+#### (b) ```add_cart``` &harr; ```cart_item``` ( one-to-many )
+- Each ```add_cart``` can have one or more items, which is representing a product the user wants to purchase or wish.
+- Each ```cart_item``` is associated with one ```add_cart```, representing all the products a user added to their ```add_cart```.
+
+#### (c) ```cart_item``` &harr; ```images``` ( many-to-one ) 
+- Each ```cart_item``` represents a specific product added to user's cart,  ```cart_item```.
+- Every ```images```(products) can be associated with multiple ```cart_item``` across different users and carts.
+
+<div align="right">
+   
+   [Go To Top](#idtext)
+   
+</div>
+
+### 3. Database Schema
 
 #### Entity : User
 | Attributes  | Key |
@@ -105,6 +129,12 @@ Contents include using database business logic to create a relational database.
 |gender | |
 | imageData | |
 
+<div align="right">
+   
+   [Go To Top](#idtext)
+   
+</div>
+
 <!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
 <a id="Built-With"></a>
 ## :wrench: Built With
@@ -117,6 +147,12 @@ Contents include using database business logic to create a relational database.
   - JPA (Java Persistence API) : Spring Boot Starter Data JPA
   - API Testing: POSTMAN
 <br/>
+
+<div align="right">
+   
+   [Go To Top](#idtext)
+   
+</div>
 
 <!-- -----------------------------------------------------Divide Section-------------------------------------------------------------- -->
 <a id="Getting-Started"></a>
@@ -180,8 +216,10 @@ To get a local copy up and running, follow these steps:
 ## :rocket: Usage
 
 > [!NOTE]
-> The application will start on "http://localhost:8080" 
+> The application will start on "http://localhost:8080/api/auth"
 
+> [!TIP]
+>RECOMMAND, using this API Endpoints via [POSTMAN](https://www.postman.com/)
 
 
 ### API Endpoints
